@@ -19,7 +19,15 @@ function toMs(h, m) {
         // first value: from; second value: to
         [toMs(15, 30), toMs(15, 55)]
       ]
-    }]
+    },
+    {
+        y: 3,
+        xRanges: [
+          // first value: from; second value: to
+          [toMs(15, 30), toMs(15, 55)]
+        ]
+      }
+]
   }, {
     // Second series
     name: 'Not Engaged',
@@ -37,8 +45,17 @@ function toMs(h, m) {
         // first value: from; second value: to
         [toMs(15, 55), toMs(16, 10)]
       ]
-    }]
-  },
+    },
+    {
+        y: 3,
+        xRanges: [
+          // first value: from; second value: to
+          [toMs(15, 55), toMs(16, 10)]
+        ]
+      }
+]
+  }
+
 ].map(function(series) {
     series.data = [];
     series.dataRaw.forEach(function(dataRaw) {
@@ -72,7 +89,7 @@ function toMs(h, m) {
     },
     plotOptions: {
       series: {
-        lineWidth: 5,
+        lineWidth: 8,
         marker: {
           enabled: false,
           symbol: 'circle'
@@ -98,8 +115,20 @@ function toMs(h, m) {
     },
   
     yAxis: {
-        visible: false,
-      tickInterval: 1
+        gridLineWidth: 0,
+        minorGridLineWidth: 0,
+        title: {
+            text: null
+        },
+        type: 'category',
+        max: 2,
+        labels: {
+            useHTML: true,
+            animate: true,
+            formatter: function () {
+                return `<span class="parent" ><img src="https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg?size=626&ext=jpg" style="width: 40px; height: 40px; border-radius:50%; object-fit:cover !important;"/><br> <p > nishit </p></span>`;
+            }
+        }
     },
     series: series
   });

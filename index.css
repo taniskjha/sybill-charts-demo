@@ -1,0 +1,22 @@
+#container {
+    width: 100%;
+    height: 100vw;
+}
+
+.parent {
+    margin-top: 10px;
+    position: absolute;
+    top: -80px;
+    left: 15px;
+}
+
+.parent p {
+    text-align: center;
+    margin: 0;
+}
+
+.parent-parent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
